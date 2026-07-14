@@ -1,0 +1,14 @@
+.env
+out/
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.idea/
+.DS_Store
+input/*
+output/*
+templates/*

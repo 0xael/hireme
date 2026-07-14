@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hireme"
+version = "0.1.0"
+description = "Generate a tailored LaTeX CV and cover letter from an old CV and a job description."
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+hireme = "hireme.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
