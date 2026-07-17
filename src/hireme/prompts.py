@@ -1,6 +1,27 @@
 """All prompt strings live here."""
 from __future__ import annotations
 
+JOB_META_SYSTEM = """\
+You are given a job posting. Extract exactly two fields:
+- company: the hiring company's name, as written in the posting (no legal suffixes like GmbH/Inc./Ltd. unless the posting uses no other form).
+- position: the job title being advertised, as written in the posting.
+
+Rules:
+- Use ONLY what is present in the posting. Do not guess.
+- Keep the position concise (drop trailing "(m/f/d)", "(all genders)", location suffixes, seniority markers only if they are decorative — keep them if they are part of the title).
+- Return the structured JSON only, no prose."""
+
+
+JOB_META_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "company": {"type": "string"},
+        "position": {"type": "string"},
+    },
+    "required": ["company", "position"],
+}
+
+
 EXTRACT_SYSTEM = """\
 You are an expert CV analyst. You are given (1) a candidate's existing CV as an attached PDF \
 and (2) a target job description. Your task is to produce a structured profile of the \
