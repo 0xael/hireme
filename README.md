@@ -4,7 +4,6 @@ CLI that generates a tailored LaTeX CV and a Markdown cover letter from an old C
 
 Under the hood, `hireme` shells out to the local [`claude`](https://docs.claude.com/en/docs/claude-code/overview) CLI in headless mode, so it uses whatever authentication your `claude` install already has — no separate `ANTHROPIC_API_KEY` required.
 
-
 ## Setup
 
 ```bash
